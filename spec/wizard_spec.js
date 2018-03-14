@@ -41,12 +41,10 @@ describe('Wizard', function() {
     var attackVal2 = wizard2.attackValue(wizard2.strength);
     var attackVal3 = wizard3.attackValue(wizard3.strength);
     var attackVal4 = wizard4.attackValue(wizard4.strength);
-
-
     expect(attackVal1.toString()).toMatch(/[1-6]/);
-    expect(attackVal2.toString()).toMatch(/[2]-[1][2]/);
-    expect(attackVal3.toString()).toMatch(/[3]-[1][8]/);
-    expect(attackVal4.toString()).toMatch(/[4]-[2][4]/);
+    expect(attackVal2.toString()).toMatch(/[2-9]|[1][0-2]/);
+    expect(attackVal3.toString()).toMatch(/[3-9]|[1][0-8]/);
+    expect(attackVal4.toString()).toMatch(/[4-9]|[1][0-9]|[2][0-4]/);
   });
 
 

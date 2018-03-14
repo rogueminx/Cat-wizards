@@ -6,13 +6,13 @@ export class Wizard {
     this.attackcounter = 0;
   }
 
-  attackValue(strength) {
+  attackValue() {
     var attackVal = Math.floor(Math.random()*6)+1;
-    if (strength === 1) {
+    if (this.strength === 1) {
       return attackVal;
-    } else if (strength === 2) {
+    } else if (this.strength === 2) {
       return (attackVal * 2);
-    } else if (strength === 3) {
+    } else if (this.strength === 3) {
       return (attackVal * 3);
     } else {
       return (attackVal * 4);
