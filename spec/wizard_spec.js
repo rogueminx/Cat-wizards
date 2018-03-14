@@ -26,10 +26,6 @@ describe('Wizard', function() {
     fight = new Fight(wizard3, necro3);
   });
 
-  it('shows how beforeEach works', function() {
-    console.log(wizard1);
-  });
-
   it('creates a wizard and necromancer strength = 1, cat = kitten/ dog = hell hound, health = 50/ 360', function() {
     expect(wizard1.strength).toEqual(1);
     expect(wizard1.cat).toEqual('kitten');
