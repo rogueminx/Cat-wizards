@@ -21,14 +21,22 @@ $(document).ready(function() {
     fight.changeTurn();
     if (death === "The necromancer is dead."){
       fight.necroLevelUp();
+      $("#necroPic").attr("src","images/necro1.png");
+      $("#necroDog").attr("src","images/wolf.jpg");
     }
     // level up
     if (skill === 5) {
       fight.levelUp();
+      $("#catImage").attr("src","images/catgif.gif");
+      $("#wizardImage").attr("src","images/warlock.jpg");
     } else if (skill === 10) {
       fight.levelUp();
+      $("#catImage").attr("src","images/bobcat.jpg");
+      $("#wizardImage").attr("src","images/wizardbadass.jpg");
     } else if (skill === 20) {
       fight.levelUp();
+      $("#catImage").attr("src","images/hellcat.jpg");
+      $("#wizardImage").attr("src","images/Gandalf.jpg");
     } else {
       console.log("Your leveling up is being ignored.")
     }
