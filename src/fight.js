@@ -18,7 +18,7 @@ export class Fight {
   constructor(wizard, necro) {
     this.wizard = wizard;
     this.necro = necro;
-    this.turn = true;
+    this.turn = true; // if true, wizard turn; if false, necro 
   }
 
   strike() {
@@ -63,5 +63,17 @@ export class Fight {
       this.wizard.health = 50;
     }
   } // levelUp
+
+  death() {
+    var wizHealth = this.wizard.health;
+    var necroHealth = this.necro.health;
+    if (necroHealth <= 0) {
+      return "The necromancer is dead.";
+    } else if (wizHealth <= 0) {
+      return "The wizard is dead."
+    } else {
+      return "Keep fighting!!!"
+    }
+  } // death
 
 } //Fight

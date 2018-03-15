@@ -5,19 +5,29 @@ import { Fight, attackValue } from '../src/fight.js';
 
 describe('fight', function() {
   var wizard;
-  var necromancer;
-  var fight;
   var wizard2;
   var wizard3;
-  var wizard4;
+  var wizard1;
+  var necromancer;
+  var necromancer2;
+  var necromancer3;
+  var necromancer1;
+  var fight;
+  var fight2;
+  var fight3;
 
   beforeEach(function() {
-    wizard = new Wizard(4, 'tiger', 400);
-    necromancer = new Necromancer(4, 'hell hound', 360);
-    fight = new Fight(wizard, necromancer);
+    wizard1 = new Wizard(1, 'kitten', 50);
     wizard2 = new Wizard(2, 'tabby', 100);
     wizard3 = new Wizard(3, 'bobcat', 200);
-    wizard4 = new Wizard(4, 'tiger', 400);
+    wizard = new Wizard(4, 'tiger', 400);
+    necromancer1 = new Necromancer(1, 'puppy', 45);
+    necromancer2 = new Necromancer(2, 'labradore', 90);
+    necromancer3 = new Necromancer(3, 'wolf', 180);
+    necromancer = new Necromancer(4, 'hell hound', 360);
+    fight = new Fight(wizard, necromancer);
+    fight2 = new Fight(wizard, necromancer1);
+    fight3 = new Fight(wizard2, necromancer2);
   });
 
 // TEST 1
@@ -52,7 +62,7 @@ describe('fight', function() {
     for (var i = 0; i < 4; i++) {
       fight.strike();
     }
-    console.log("Your wiz skill is " + fight.wizard.skill);
+    console.log("Your wizard skill is " + fight.wizard.skill);
     expect(fight.wizard.skill).toEqual(4);
   });
 
@@ -62,9 +72,29 @@ describe('fight', function() {
       fight.strike();
     }
     fight.levelUp();
-    expect(fight.wizard.strength).toEqual(wizard4.strength);
-    expect(fight.wizard.cat).toEqual(wizard4.cat);
-    expect(fight.wizard.health).toEqual(wizard4.health);
+    expect(fight.wizard.strength).toEqual(wizard.strength);
+    expect(fight.wizard.cat).toEqual(wizard.cat);
+    expect(fight.wizard.health).toEqual(wizard.health);
+  });
+
+// TEST 7
+  it('monitors players health, alerts when either health <= 0; necromancer test', function(){
+    for (var i = 0; i < 20; i++) {
+      fight2.strike();
+    }
+    var death = fight2.death();
+    console.log(death);
+    expect(death).toEqual('The necromancer is dead.');
+  });
+
+// TEST 8
+  it('monitors players health, alerts when either health <= 0; wizard test', function(){
+    fight3.changeTurn();
+    for (var i = 0; i < 90; i++) {
+      fight3.strike();
+    }
+    var death2 = fight3.death();
+    expect(death2).toEqual('The wizard is dead.')
   });
 
 }); // describe fight
