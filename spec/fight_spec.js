@@ -97,4 +97,11 @@ describe('fight', function() {
     expect(death2).toEqual('The wizard is dead.')
   });
 
+// TEST 9
+  it('levels up the necromancer when called', function() {
+    var necromancer = fight2.necro;
+    fight2.necroLevelUp();
+    expect(necromancer.strength).toEqual(2);
+  });
+
 }); // describe fight

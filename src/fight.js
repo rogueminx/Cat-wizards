@@ -18,7 +18,7 @@ export class Fight {
   constructor(wizard, necro) {
     this.wizard = wizard;
     this.necro = necro;
-    this.turn = true; // if true, wizard turn; if false, necro 
+    this.turn = true; // if true, wizard turn; if false, necro
   }
 
   strike() {
@@ -63,6 +63,19 @@ export class Fight {
       this.wizard.health = 50;
     }
   } // levelUp
+
+  necroLevelUp() {
+    var strength = this.necro.strength;
+    if (strength === 1) {
+      this.necro.strength = 2;
+    } else if (strength === 2) {
+      this.necro.strength = 3;
+    } else if (strength === 3) {
+      this.necro.strength = 4;
+    } else {
+      this.necro.strength = 4;
+    }
+  }
 
   death() {
     var wizHealth = this.wizard.health;
