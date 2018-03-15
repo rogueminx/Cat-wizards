@@ -68,10 +68,16 @@ export class Fight {
     var strength = this.necro.strength;
     if (strength === 1) {
       this.necro.strength = 2;
+      this.necro.dog = "labrador";
+      this.necro.health = 90;
     } else if (strength === 2) {
       this.necro.strength = 3;
+      this.necro.dog = "wolf";
+      this.necro.health = 180;
     } else if (strength === 3) {
       this.necro.strength = 4;
+      this.necro.dog = "hell hound";
+      this.necro.health = 360;
     } else {
       this.necro.strength = 4;
     }

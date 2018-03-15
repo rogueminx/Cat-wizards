@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" type='text/css'>
     <meta charset="utf-8">
     <title>Cat Wizards</title>
   </head>
   <body>
     <div class='container'>
+
       <div class="table">
         <div class="row">
           <div class="col-md-12">
-            <h1>Cat Wizards</h1>
+            <h1 id="header">Cat Wizards</h1>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            wiz img
+          <div class="col-md-4" id="picture">
+
           </div>
-          <div class="col-md-4">
-            fight img
-          </div>
-          <div class="col-md-4">
-            necro img
-          </div>
-        </div>
-        <div class="row">
           <div class="col-md-4">
 
+          </div>
+          <div class="col-md-4">
+            <p id="smalleheader">Necromancer</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <img src="images/batman.gif" />
           </div>
           <div class="col-md-4">
             <button type="button" class="btn" name="button">FIGHT!</button>
           </div>
           <div class="col-md-4">
-
+            <img src="images/hellhound.jpg" />
           </div>
         </div>
         <div class="row">
           <div class="col-md-4">
-            wiz stats
+            <p id="smalleheader">Wizard Stats</p>
+            <p>Strength Level: <span id="wizardstrength"></span></p>
+            <p>Cat Power: <span id="wizardcat"></span></p>
+            <p>HP: <span id="wizardhealth"></span></p>
           </div>
           <div class="col-md-4">
 
           </div>
           <div class="col-md-4">
-            necro stats
+            <p id="smalleheader">Necromancer Stats</p>
+            <p>Strength Level: <span id="necrostrength"></span></p>
+            <p>Dog Power: <span id="necrodog"></span></p>
+            <p>HP: <span id="necrohealth"></span></p>
           </div>
         </div>
       </div>
