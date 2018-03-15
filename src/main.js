@@ -16,11 +16,12 @@ $(document).ready(function() {
 
   $('#play').click(function(){
     var skill = fight.wizard.skill;
+    var death = fight.death();
     fight.strike();
     fight.changeTurn();
-    fight.death();
-    console.log("This is the wizard skill " + skill);
-
+    if (death === "The necromancer is dead."){
+      fight.necroLevelUp();
+    }
     // level up
     if (skill === 5) {
       fight.levelUp();
@@ -38,7 +39,5 @@ $(document).ready(function() {
     $('#wizardstrength').text(fight.wizard.strength);
     $('#wizardcat').text(fight.wizard.cat);
     $('#wizardhealth').text(fight.wizard.health);
-
-    console.log(fight.wizard.skill);
   });
 });
